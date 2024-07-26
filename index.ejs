@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative To-Do List</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List App</h1>
+        <div class="input-container">
+            <input type="text" id="new-task" placeholder="Add my new task...">
+            <button id="add-task-btn">Add</button>
+        </div>
+        <ul id="tasks">
+            <% tasks.forEach(function(task, index) { %>
+                <li data-id="<%= index %>">
+                    <input type="checkbox" class="task-checkbox" <%= task.completed ? 'checked' : '' %>>
+                    <span class="task-text <%= task.completed ? 'completed' : '' %>"><%= task.text %></span>
+                    <button class="delete-task-btn">Delete</button>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html>
